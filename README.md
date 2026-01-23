@@ -22,8 +22,11 @@
 		9 merge it
 		10 git checkout master, fetch, pull 
 
+	solve conflicts (when deploying feature branch to master)
+		1 git pull
+
 B2
-	solve conflicts
+	solve conflicts (when deploying fully develop branch to staging)
 		- Deploy develop to staging:
 		1 git fetch
 		2 git checkout develop
