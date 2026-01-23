@@ -1,8 +1,8 @@
-0 introduction full stack path
++ 0 introduction full stack path
 	https://youtu.be/o1Ka2i_3O2w
-1 keyboard skill
++ 1 keyboard skill
 	https://www.youtube.com/watch?v=60BZ-Rm0yXw
-2 git:
++ 2 git:
 	https://youtu.be/ntx_d_IRLX4
 	initial:
 		1 git init
@@ -50,7 +50,9 @@
 			(DO NOT MERGE IT TO DEVELOP, we need it only merged to staging)
 		13 create PR From develop to staging (Or use the current one you already created before start merging)
 
-3 how to research to find out what should be stack (what language to learn 2026)
++ 3 how to research to find out what should be stack (what language to learn 2026)
+	https://youtu.be/OKOah-cYV8Q
+	
 	Web: Js (React, NextJs, Angular, Vue2)
 	Server: Java (Spring Boot), C# (Asp.net), Python (Django, FastApi), Php (Laravel), NestJs, GoLang
 	Machine learning, Python
@@ -67,13 +69,22 @@
 	4 Quick for startups Laravel
 	4 Quick, socket based: NestJs (C++)
 
-4 how to initialize a project (react, next, angular, vue, fastApi, Spring boot, nestJs)
-5 initialize frontend project
-6 uikit - storybook: button, inputs, table, forms, card, filters, toast...
-7 eslint, prettier, huskey
++ 4 how to initialize a project (react, next, angular, vue, fastApi, Spring boot, nestJs)
+	https://github.com/faridsh69/youtube
+	nextJs
+		- install node, pnpm, npm, yarn 
+		pnpm create next-app@latest app-name-my-app --yes
+		pnpm dev
+	FastApi
+		- install python, pip, env 
+		python -m venv .venv
+		pip install "fastapi[standard]"
+
+5 eslint, prettier, huskey
+6 defining tasks
+7 uikit - storybook: button, inputs, table, forms, card, filters, toast...
 8 run tests, unit test, integration test, e2e
-9 defining tasks
-10 when you are bored, stress on finish that task, how to start working on your task
+9 when you are bored, stress on finish that task, how to start working on your task
 11 code review (principles)
 12 CI/CD
 13 Sutuping a server, installing git, node, npm, ...
