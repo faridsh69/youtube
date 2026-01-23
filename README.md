@@ -21,8 +21,17 @@
 		8 create a pull request (merge request) and assign your manager as reviewer
 		9 merge it
 		10 git checkout master, fetch, pull 
-b1
-	solve conflicts
+
+	solve conflicts (when deploying feature branch to master)
+		1 git pull
+		2 you will face conflicts and see HEAD ======= > commit id in your code
+		3 git checkout --ours . (if you want to accept what ever you wrote to be pushed)
+		OR 4 git checkout --theirs . (if you want to accept what ever in master branch is)
+		5 git add .
+		6 git commit -m "solved conflicts accepted ours"
+		7 git push origin b2
+B2
+	solve conflicts (when deploying fully develop branch to staging)
 		- Deploy develop to staging:
 		1 git fetch
 		2 git checkout develop
