@@ -4,10 +4,8 @@ import next from 'eslint-config-next'
 
 /* eslint-disable import/no-anonymous-default-export */
 export default [
-  // Next.js rules
   ...next,
 
-  // TypeScript overrides
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -26,7 +24,7 @@ export default [
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_', ignoreRestSiblings: true },
       ],
-      'import/no-anonymous-default-export': 'off',
+      // 'import/no-anonymous-default-export': 'off',
     },
   },
 ]
