@@ -22,6 +22,7 @@
 		9 merge it
 		10 git checkout master, fetch, pull 
 
+B2
 	solve conflicts
 		- Deploy develop to staging:
 		1 git fetch
