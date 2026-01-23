@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from 'next/font/google'
 
 import './globals.css'
 
+import { APP_URLS } from '@/constants/url.constants'
+import Link from 'next/link'
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -25,7 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <nav>
+          Nav items <Link href={APP_URLS.cars}>Cars</Link>
+        </nav>
+        {children}
+      </body>
     </html>
   )
 }
