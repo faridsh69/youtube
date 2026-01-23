@@ -2,7 +2,8 @@
 	https://youtu.be/o1Ka2i_3O2w
 1 keyboard skill
 	https://www.youtube.com/watch?v=60BZ-Rm0yXw
-2 git: 
+2 git:
+	https://youtu.be/ntx_d_IRLX4
 	initial:
 		1 git init
 		2 git remove add origin "github/gitlab repo url"
@@ -30,7 +31,7 @@
 		5 git add .
 		6 git commit -m "solved conflicts accepted ours"
 		7 git push origin b2
-B2
+
 	solve conflicts (when deploying fully develop branch to staging)
 		- Deploy develop to staging:
 		1 git fetch
@@ -49,10 +50,23 @@ B2
 			(DO NOT MERGE IT TO DEVELOP, we need it only merged to staging)
 		13 create PR From develop to staging (Or use the current one you already created before start merging)
 
+3 how to research to find out what should be stack (what language to learn 2026)
+	Web: Js (React, NextJs, Angular, Vue2)
+	Server: Java (Spring Boot), C# (Asp.net), Python (Django, FastApi), Php (Laravel), NestJs, GoLang
+	Machine learning, Python
+	Math, BigData, Data analyst, Python
+	Mobile: android/ios, java, kotlin, swift, objective C, Js React native, cordova	
+	OS: ubunto/windows C#, Js
+	Device: C++
 
+	1 Js (Frontend - React) (100%) 2 Python (Backend - FastApi) (100%) 3 Java (Spring Boot) (100%) 4 C# (Asp.net)
 
+	1 how much knowledge I have for that frame work and languge
+	2 if you use AI go with python
+	3 Banks, government, military services: Java (Spring Boot), C# (Asp.net)
+	4 Quick for startups Laravel
+	4 Quick, socket based: NestJs (C++)
 
-3 how to research to find out what should be stack (what language to learn 2026) 
 4 how to initialize a project (react, next, angular, vue, fastApi, Spring boot, nestJs)
 5 initialize frontend project
 6 uikit - storybook: button, inputs, table, forms, card, filters, toast...
