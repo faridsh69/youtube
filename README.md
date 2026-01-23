@@ -21,7 +21,7 @@
 		8 create a pull request (merge request) and assign your manager as reviewer
 		9 merge it
 		10 git checkout master, fetch, pull 
-
+b1
 	solve conflicts
 		- Deploy develop to staging:
 		1 git fetch
