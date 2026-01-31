@@ -1,0 +1,211 @@
++ 01 introduction full stack path
+	https://youtu.be/u8Pbt8evCHw
++ 02 keyboard skill
+	https://www.youtube.com/watch?v=60BZ-Rm0yXw
++ 03 git: control versioning
+	https://youtu.be/8qIZQ9zSAwk
+
+	initial:
+		1 git init
+		2 git remove add origin "github/gitlab repo url"
+		3 git add .
+		4 git commit -m "your message what you have done in this commit"
+		5 git push origin master
+
+	feature-branch
+		1 git checkout development
+		2 git fetch
+		3 git pull origin development
+		4 git checkout -b "#001-create-migration-user-in-database"
+		5 git add .
+		6 git commit -m "001-create-migration-user-in-database: added new migration"
+		7 git push origin 001-create-migration-user-in-database
+		8 create a pull request (merge request) and assign your manager as reviewer
+		9 merge it
+		10 git checkout development, fetch, pull 
+
+	solve conflicts (when deploying feature branch to master)
+		1 git checkout branch b2 => git pull
+		2 git pull origin development
+		2 you will face conflicts and see HEAD ======= > commit id in your code
+		3 git checkout --ours . (if you want to accept what ever you wrote to be pushed)
+		OR 4 git checkout --theirs . (if you want to accept what ever in master branch is)
+		5 git add .
+		6 git commit -m "solved conflicts accepted ours"
+		7 git push origin b2
+
+	solve conflicts (when deploying fully develop branch to staging)
+		- Deploy develop to staging:
+		1 git fetch
+		2 git checkout develop
+		3 git pull
+		4 git checkout staging
+		5 git pull
+		6 git checkout -b dev-to-staging-2026-01-23 (create this middle branch from staging, increase its verion)
+		7 git merge develop
+			(solve conflicts by these commands to accept current changes from develop)
+		8 git checkout --ours . (OR git restore --source=HEAD --ours .) (these are same)
+		9 git add .
+		10 git commit
+		11 git push origin dev-to-staging-2026-01-23
+		12 Create PR From dev-to-staging-2026-01-23 to staging
+			(DO NOT MERGE IT TO DEVELOP, we need it only merged to staging)
+		13 create PR From develop to staging (Or use the current one you already created before start merging)
++ 04 how to research to find out what should be stack (what language to learn 2026)	
+	https://youtu.be/rzryItuRSGU
+
+	Web: Js (React, NextJs, Angular, Vue2)
+	Server: Java (Spring Boot), C# (Asp.net), Python (Django, FastApi), Php (Laravel), NestJs, GoLang
+	Machine learning, Python
+	Math, BigData, Data analyst, Python
+	Mobile: android/ios, java, kotlin, swift, objective C, Js React native, cordova	
+	OS: ubunto/windows C#, Js
+	Device: C++
+
+	1 Js (Frontend - React) (100%) 2 Python (Backend - FastApi) (100%)
+
+	1 how much knowledge I have for that frame work and languge
+	2 if you use AI go with python
+	3 Banks, government, military services: Java (Spring Boot), C# (Asp.net)
+	4 Quick for startups Laravel
+	4 Quick, socket based: NestJs (C++)
++ 05 how to initialize a project (react, next, angular, vue, fastApi, Spring boot, nestJs)
+	https://youtu.be/nhtBdDw8c_I
+
+	https://github.com/faridsh69/youtube
+	nextJs
+		- install node, pnpm, npm, yarn 
+		pnpm create next-app@latest app-name-my-app --yes
+		pnpm dev
+	FastApi
+		- install python, pip, env 
+		python -m venv .venv
+		pip install "fastapi[standard]"
++ 06 eslint, prettier, huskey
+	https://youtu.be/FNyWp4-zseE
+
+	"scripts": {
+	    "prepare": "husky",
+	    "prettier": "prettier --config .prettierrc.json src --write",
+	    "lint": "eslint src"
+	},
+	"devDependencies": {
+	    "@eslint/eslintrc": "^3",
+	    "eslint": "^9.38.0",
+	    "eslint-config-next": "16.1.4",
+	    "eslint-plugin-react": "^7.37.5",
+	    "eslint-plugin-react-hooks": "^7.0.1",
+	    "eslint-plugin-storybook": "^9.1.13",
+	    "eslint-plugin-unused-imports": "^4.3.0",
+
+	    "prettier": "^3.8.1",
+    	"prettier-plugin-packagejson": "^3.0.0",
+	    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+
+	    "husky": "^9.1.7",
+	},
++ 07 defining tasks, subtasks
+	https://youtu.be/74tDBIysdEU
+
+	1 next
+		1.1 install node
+			1.1.1 turn on my pc
+			1.1.2 open browser
+			1.1.3 find the proper version match to react 19
+			1.1.4 install nvm (node version manager) to switch between different version of nodes
+		1.2 install pnpm
+	2 eslint, prettier, huskey
+		2.1 ask chatgbt what is the next step to add eslint to nextjs
+		2.2 sync prettier and eslint
+	3 router
+		3.1 
+	4 paths, tsconfig, package json
+	5 adding some unit test
+	6 story book
+	7 creating uikit
++ 08 when you are bored, stress on finish that task, how to start working on your task
+	https://youtu.be/4_Q6VN23K40
+
+	- create tasks
+	- create subtasks
+	- create sub-sub-tasks
+	- make the first sub sub tasks as small and plesant as possible
+	- right after you start doing your first subtask you will do others
++ 09 routing in frontend
+	https://youtu.be/ZsKkiOjNiR8
+	
+	- create a app folder in src
+	- create a folder name cars inside app and create new file named page.tsx
+	- not-found.tsx in app will be used for 404 page
+10 uikit - shadcn - button, inputs, table, forms, card, filters, toast
+11 how to develop your own uikit
+12 how to develop a form component in react
+13 how to develop apis
+14 how to create a useCrud hook
+15 which state-management? jotai
+16 where should be modals in project? portals
+17 virtualization in react
+18 performance enhancing, analysing
+19 localstorage helper, debounce helper, variable helper, 
+
+19 storybook
+20 run tests, unit test, integration test, e2e
+21 code review (principles)
+22 CI/CD
+23 Sutuping a server, installing git, node, npm, ...
+24 CarSeller
+	call the api from json-server
+	list of registered cars
+		filters
+		sorting
+		pagination
+		handling (no data could find for you, please change the filters)
+		loading
+		actions (edit/delete/active-toggle)
+	form to add/update cars
+		title,
+		model,
+		description,
+		active,
+		image
+		owners: [{first name, last name, gender, phone, email, address (autocomple from google api)}]
+	delete cars
+	print 
+
+25 best practices about designing components:
+	Card
+	date format
+	price format
+	toast
+	container
+	responsive
+	filters
+	tables
+	form
+	confirmation
+	exception handler
+27 clean code
+
+
+28 backend
+29 create a fastApi project
+30 exception handler
+31 routing
+32 bootstraping app
+33 controller
+34 service
+35 reposotory
+36 model
+37 event listeners
+38 design patters:
+39 resource 
+40 validation
+41 email
+42 sms
+43 call external service
+44 call internal service
+45 query, filtering, sorting, pagination
+46 uploading image files
+47 rabbit mq
+
+50 how to have a game project with socket, react, NestJs
