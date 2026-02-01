@@ -1,0 +1,30 @@
+@use '@/theme/variables.scss';
+
+.leftSidebar {
+  margin-top: 64px;
+}
+
+.rightSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 64px;
+}
+
+.tabContent {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fixedMobileCreatePost {
+  position: fixed;
+  bottom: 60px;
+  left: 50px;
+  right: 50px;
+
+  @include variables.respond-to(sm, min) {
+    display: none;
+  }
+}

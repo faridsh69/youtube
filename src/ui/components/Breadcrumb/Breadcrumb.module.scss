@@ -1,0 +1,17 @@
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  .breadcrumbItem {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding-right: 1px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

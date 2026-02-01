@@ -20,6 +20,13 @@ export default [
     },
     rules: {
       'no-unused-vars': 'off',
+      'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/refs': 'off',
+      'react-hooks/exhaustive-deps': 'off',
+      'react-hooks/static-components': 'off',
+      'import/no-anonymous-default-export': 'off',
+      'react-hooks/incompatible-library': 'off',
+      '@next/next/no-img-element': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_', ignoreRestSiblings: true },

@@ -1,0 +1,26 @@
+.imgWrapper {
+  position: relative;
+  cursor: pointer;
+  min-width: 25px;
+  min-height: 25px;
+
+  .img {
+    max-width: 100%;
+    user-select: none;
+    transition: opacity 0.3s;
+  }
+
+  .loading {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+  }
+
+  .cached {
+    transition: none;
+  }
+}
+
+.hasBorderRadius {
+  overflow: hidden;
+}

@@ -1,0 +1,214 @@
+@use 'sass:math';
+@use 'sass:map';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+html,
+body {
+  font-family: 'DM Sans', sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+$breakpoints: (
+  sm: 575px,
+  md: 775px,
+  lg: 1000px,
+  xl: 1250px,
+);
+
+// Fonts: font size, weight and line-height
+$fonts: (
+  400: (
+    12: 15px,
+    14: 18px,
+    16: 21px,
+    18: 24px,
+    20: 27px,
+  ),
+  500: (
+    14: 21px,
+    16: 24px,
+    18: 27px,
+    20: 30px,
+    22: 34px,
+    24: 38px,
+  ),
+  700: (
+    14: 21px,
+    16: 24px,
+    18: 27px,
+    20: 30px,
+    22: 33px,
+    24: 39px,
+    28: 45px,
+  ),
+);
+
+:root {
+  @each $weight, $sizes in $fonts {
+    @each $size, $lineHeight in $sizes {
+      --font-#{$weight}-#{$size}: normal #{$weight} #{$size}px/#{$lineHeight} 'DM Sans', sans-serif;
+    }
+  }
+
+  // Colors
+  --white: #ffffff;
+  --black: #000000;
+
+  // Grey
+  --grey-100: #f2f2f2;
+  --grey-200: #e2ecef;
+  --grey-300: #e6e6e6;
+  --grey-400: #d9d9d9;
+  --grey-500: #cccccc;
+  --grey-600: #999999;
+  --grey-700: #666666;
+  --grey-800: #333333;
+
+  // Bezh
+  --beige: #f9f7f1;
+  --beige-dark: #fff1c8;
+
+  // Primary variant
+  --primary-main: var(--black); // Mostly background
+  --primary-inverse: var(--white); // Mostly text
+  --primary-dark: var(--grey-800); // Mostly hover
+  --primary-light: var(--grey-100); // Mostly hover
+
+  // Secondary variant
+  --secondary-main: var(--white);
+  --secondary-inverse: var(--black);
+  --secondary-dark: var(--grey-800);
+  --secondary-light: var(--grey-100);
+
+  --error-light: #ee2c2c;
+  --error: #c92121;
+  --success: #1eb82b;
+  --warning: #ff9b44;
+
+  --disabled-main: var(--grey-400);
+  --disabled-inverse: var(--grey-700);
+
+  // Spacings
+  --general-outline-width: 1px;
+  --general-outline-style: solid;
+
+  // Sizes
+  --size-s-font: var(--font-400-14);
+  --size-s-size: 30px;
+  --size-s-space: 8px;
+  --size-s-borderradius: 4px;
+
+  --size-m-font: var(--font-400-16);
+  --size-m-size: 40px;
+  --size-m-space: 16px;
+  --size-m-borderradius: 6px;
+
+  --size-l-font: var(--font-400-18);
+  --size-l-size: 48px;
+  --size-l-space: 20px;
+  --size-l-borderradius: 8px;
+
+  --navbar-overlay-z-index: 98;
+  --navbar-z-index: 99;
+  --modal-overlay-z-index: 100;
+  --modal-z-index: 101;
+  --popover-z-index: 102;
+  --context-menu-z-index: 103;
+  --select-z-index: 104;
+  --toast-z-index: 105;
+  --toastify-z-index: 105;
+  --tooltip-z-index: 106;
+}
+
+@mixin scroll {
+  scrollbar-color: var(--grey-200-grad) transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--grey-200-grad);
+  }
+}
+
+$alignments: left, right, center;
+
+@each $alignment in $alignments {
+  .text-align-#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
+$grid-columns: 12;
+$gutter: 20px;
+
+@mixin make-col($i) {
+  @if $i == 0 {
+    display: none;
+    flex: 0 0 auto;
+    max-width: none;
+  } @else {
+    display: block;
+    $pct: math.percentage(math.div($i, $grid-columns));
+    flex: 0 0 $pct;
+    max-width: $pct;
+  }
+}
+
+@mixin _generate-col-set($prefix: null) {
+  .col#{if($prefix, '-#{$prefix}', '')} {
+    flex: 1 0 0;
+    max-width: 100%;
+  }
+
+  .col#{if($prefix, '-#{$prefix}', '')}-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+  }
+
+  @for $i from 0 through $grid-columns {
+    .col#{if($prefix, '-#{$prefix}', '')}-#{$i} {
+      @include make-col($i);
+    }
+  }
+}
+
+@include _generate-col-set();
+
+@each $name, $min in $breakpoints {
+  @media (min-width: $min) {
+    @include _generate-col-set($name);
+  }
+}
+
+@mixin respond-to($point, $type: max) {
+  $value: map.get($breakpoints, $point);
+  @if $value == null {
+    @error "Unknown breakpoint `#{$point}`. Valid keys: #{map.keys($breakpoints)}";
+  }
+
+  @if $type == max {
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else if $type == min {
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "Second arg must be 'min' or 'max'.";
+  }
+}
