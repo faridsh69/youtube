@@ -7,7 +7,7 @@
 .switch {
   width: 34px;
   height: 20px;
-  background-color: var(--grey-500);
+  background-color: var(--grey-300);
   border-radius: 999px;
   position: relative;
   cursor: pointer;
@@ -38,7 +38,7 @@
 .on {
   .knob {
     left: 16px;
-    background: black;
+    background: var(--primary-main);
     border: none;
   }
 }

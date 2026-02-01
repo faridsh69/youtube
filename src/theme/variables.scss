@@ -11,13 +11,6 @@ body {
   padding: 0;
 }
 
-$breakpoints: (
-  sm: 575px,
-  md: 775px,
-  lg: 1000px,
-  xl: 1250px,
-);
-
 // Fonts: font size, weight and line-height
 $fonts: (
   400: (
@@ -67,15 +60,41 @@ $fonts: (
   --grey-700: #666666;
   --grey-800: #333333;
 
-  // Bezh
-  --beige: #f9f7f1;
-  --beige-dark: #fff1c8;
+  // Accent
+  // --primary-main: #2563eb; // background
+  // --primary-inverse: #ffffff; // text
+  // --primary-dark: #1523eb; // main darker
+  // --primary-light: #eff6ff; // main lighter
 
-  // Primary variant
-  --primary-main: var(--black); // Mostly background
-  --primary-inverse: var(--white); // Mostly text
-  --primary-dark: var(--grey-800); // Mostly hover
-  --primary-light: var(--grey-100); // Mostly hover
+  // Teal
+  --primary-main: #0d9488; // background
+  --primary-dark: #0f766e; // main darker
+  --primary-light: #99f6e4; // main lighter
+  --primary-inverse: var(--white); // text
+
+  // Indigo
+  // --primary-main: #4338ca; // background
+  // --primary-dark: #312e81; // main darker
+  // --primary-light: #c7d2fe; // main lighter
+  // --primary-inverse: var(--white); // text
+
+  // Amber
+  // --primary-main: #d97706; // background
+  // --primary-dark: #b45309; // main darker
+  // --primary-light: #fde68a; // main lighter
+  // --primary-inverse: var(--white); // text (better contrast here)
+
+  // Rose
+  // --primary-main: #e11d48; // background
+  // --primary-dark: #be123c; // main darker
+  // --primary-light: #fda4af; // main lighter
+  // --primary-inverse: var(--white); // text
+
+  // Emerald
+  // --primary-main: #059669; // background
+  // --primary-dark: #047857; // main darker
+  // --primary-light: #a7f3d0; // main lighter
+  // --primary-inverse: var(--white); // text
 
   // Secondary variant
   --secondary-main: var(--white);
@@ -121,94 +140,4 @@ $fonts: (
   --toast-z-index: 105;
   --toastify-z-index: 105;
   --tooltip-z-index: 106;
-}
-
-@mixin scroll {
-  scrollbar-color: var(--grey-200-grad) transparent;
-  scrollbar-width: thin;
-
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--grey-200-grad);
-  }
-}
-
-$alignments: left, right, center;
-
-@each $alignment in $alignments {
-  .text-align-#{$alignment} {
-    text-align: $alignment;
-  }
-}
-
-$grid-columns: 12;
-$gutter: 20px;
-
-@mixin make-col($i) {
-  @if $i == 0 {
-    display: none;
-    flex: 0 0 auto;
-    max-width: none;
-  } @else {
-    display: block;
-    $pct: math.percentage(math.div($i, $grid-columns));
-    flex: 0 0 $pct;
-    max-width: $pct;
-  }
-}
-
-@mixin _generate-col-set($prefix: null) {
-  .col#{if($prefix, '-#{$prefix}', '')} {
-    flex: 1 0 0;
-    max-width: 100%;
-  }
-
-  .col#{if($prefix, '-#{$prefix}', '')}-auto {
-    flex: 0 0 auto;
-    width: auto;
-    max-width: none;
-  }
-
-  @for $i from 0 through $grid-columns {
-    .col#{if($prefix, '-#{$prefix}', '')}-#{$i} {
-      @include make-col($i);
-    }
-  }
-}
-
-@include _generate-col-set();
-
-@each $name, $min in $breakpoints {
-  @media (min-width: $min) {
-    @include _generate-col-set($name);
-  }
-}
-
-@mixin respond-to($point, $type: max) {
-  $value: map.get($breakpoints, $point);
-  @if $value == null {
-    @error "Unknown breakpoint `#{$point}`. Valid keys: #{map.keys($breakpoints)}";
-  }
-
-  @if $type == max {
-    @media screen and (max-width: $value) {
-      @content;
-    }
-  } @else if $type == min {
-    @media screen and (min-width: $value) {
-      @content;
-    }
-  } @else {
-    @error "Second arg must be 'min' or 'max'.";
-  }
 }

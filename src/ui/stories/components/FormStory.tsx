@@ -79,12 +79,12 @@ export const FormStory = () => {
     },
     {
       name: 'birth_date',
-      columns: 12,
+      columns: 6,
       component: InputComponentsEnum.Date,
     },
     {
       name: 'gender',
-      columns: 12,
+      columns: 3,
       component: InputComponentsEnum.RadioList,
       options: [
         { value: 'male', label: 'Male' },
@@ -93,7 +93,7 @@ export const FormStory = () => {
     },
     {
       name: 'accept_term_and_conditions',
-      columns: 12,
+      columns: 4,
       component: InputComponentsEnum.Checklist,
       options: [
         {
@@ -108,14 +108,14 @@ export const FormStory = () => {
     },
     {
       name: 'Switch',
-      columns: 12,
+      columns: 2,
       component: InputComponentsEnum.Toggle,
     },
-    {
-      name: 'has_disablity?',
-      columns: 4,
-      component: InputComponentsEnum.Checkbox,
-    },
+    // {
+    //   name: 'has_disablity?',
+    //   columns: 3,
+    //   component: InputComponentsEnum.Checkbox,
+    // },
     {
       name: 'bio',
       columns: 12,

@@ -33,17 +33,17 @@ export enum ColorsEnum {
   Grey700 = 'var(--grey-700)',
   Grey800 = 'var(--grey-800)',
 
-  PrimaryMain = 'var(--primary-main)',
-  PrimaryInverse = 'var(--primary-inverse)',
-  PrimaryTransparent = 'var(--primary-light)',
+  PrimaryMain = 'var(--primary-main)', // background
+  PrimaryInverse = 'var(--primary-inverse)', // text
+  PrimaryDark = 'var(--primary-dark)', // main darker
+  PrimaryTransparent = 'var(--primary-light)', // main lighter
 
   SecondaryMain = 'var(--secondary-main)',
   SecondaryInverse = 'var(--secondary-inverse)',
+  SecondaryDark = 'var(--secondary-dark)',
   SecondaryTransparent = 'var(--secondary-light)',
 
   Disabled = 'var(--disabled)',
-  Bezh = 'var(--beige)',
-  BezhDark = 'var(--beige-dark)',
   Error = 'var(--error)',
   ErrorLight = 'var(--error-light)',
   Success = 'var(--success)',

@@ -36,7 +36,11 @@
 
     &:hover {
       background: var(--primary-light);
-      color: var(--primary-main);
+      color: var(--primary-dark);
+
+      svg {
+        color: var(--primary-dark) !important;
+      }
     }
 
     &:active {
@@ -75,7 +79,6 @@
 .triggerWrapper {
   display: flex;
   flex-direction: row;
-  // max-width: fit-content;
 }
 
 .labelWrapper {

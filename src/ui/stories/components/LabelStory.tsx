@@ -6,6 +6,12 @@ export const LabelStory = () => {
   return (
     <div className={styles.story}>
       <h4>2) Label, Tooltip</h4>
+      <Label
+        label={' text and show tooltip if the label text space is not enough'}
+        font={FontsEnum.Header24}
+        linesCount={1}
+        hint='Hint'
+      />
       <small>
         For all places we need to render text, only we should use this label component and add it
         proper font and color from props, injecting any type of classname or style is forbidden, It

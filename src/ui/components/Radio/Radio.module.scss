@@ -32,11 +32,11 @@
     left: 4px;
     width: 10px;
     height: 10px;
-    background-color: black;
+    background-color: var(--primary-main);
     border-radius: 50%;
   }
 
   input:checked + .box {
-    border-color: var(--black);
+    border-color: var(--primary-main);
   }
 }

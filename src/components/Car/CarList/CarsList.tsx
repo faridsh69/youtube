@@ -2,7 +2,7 @@ import { QUERY_KEYS } from '@/apis/reactQuery/reactQuery.constants'
 import { useCrudPagination } from '@/apis/reactQuery/useCrudPagination'
 import { usePagination } from '@/apis/reactQuery/usePagination'
 import { useCrudCarsList } from '@/apis/useCruds/adminCruds'
-import { themeStyles } from '@/theme/themeStyles'
+import { themeStyles } from '@/theme/commonStyles'
 import { DataNotFound } from '@/ui'
 import { PER_PAGE } from '@/utils/navigate/navigation.constants'
 

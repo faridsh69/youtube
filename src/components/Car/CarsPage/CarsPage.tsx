@@ -1,6 +1,6 @@
 'use client'
 
-import { themeStyles } from '@/theme/themeStyles'
+import { themeStyles } from '@/theme/commonStyles'
 
 import { CarsList } from '../CarList/CarsList'
 import styles from './CarsPage.module.scss'

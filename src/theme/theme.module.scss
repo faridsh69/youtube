@@ -3,126 +3,12 @@
 @use 'sass:map';
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
-html,
-body {
-  font-family: 'DM Sans', sans-serif;
-  max-width: 100vw;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
 $breakpoints: (
   sm: 575px,
   md: 775px,
   lg: 1000px,
   xl: 1250px,
 );
-
-// Fonts: font size, weight and line-height
-$fonts: (
-  400: (
-    12: 15px,
-    14: 18px,
-    16: 21px,
-    18: 24px,
-    20: 27px,
-  ),
-  500: (
-    14: 21px,
-    16: 24px,
-    18: 27px,
-    20: 30px,
-    22: 34px,
-    24: 38px,
-  ),
-  700: (
-    14: 21px,
-    16: 24px,
-    18: 27px,
-    20: 30px,
-    22: 33px,
-    24: 39px,
-    28: 45px,
-  ),
-);
-
-:root {
-  @each $weight, $sizes in $fonts {
-    @each $size, $lineHeight in $sizes {
-      --font-#{$weight}-#{$size}: normal #{$weight} #{$size}px/#{$lineHeight} 'DM Sans', sans-serif;
-    }
-  }
-
-  // Colors
-  --white: #ffffff;
-  --black: #000000;
-
-  // Grey
-  --grey-100: #f2f2f2;
-  --grey-200: #e2ecef;
-  --grey-300: #e6e6e6;
-  --grey-400: #d9d9d9;
-  --grey-500: #cccccc;
-  --grey-600: #999999;
-  --grey-700: #666666;
-  --grey-800: #333333;
-
-  // Bezh
-  --beige: #f9f7f1;
-  --beige-dark: #fff1c8;
-
-  // Primary variant
-  --primary-main: var(--black); // Mostly background
-  --primary-inverse: var(--white); // Mostly text
-  --primary-dark: var(--grey-800); // Mostly hover
-  --primary-light: var(--grey-100); // Mostly hover
-
-  // Secondary variant
-  --secondary-main: var(--white);
-  --secondary-inverse: var(--black);
-  --secondary-dark: var(--grey-800);
-  --secondary-light: var(--grey-100);
-
-  --error-light: #ee2c2c;
-  --error: #c92121;
-  --success: #1eb82b;
-  --warning: #ff9b44;
-
-  --disabled-main: var(--grey-400);
-  --disabled-inverse: var(--grey-700);
-
-  // Spacings
-  --general-outline-width: 1px;
-  --general-outline-style: solid;
-
-  // Sizes
-  --size-s-font: var(--font-400-14);
-  --size-s-size: 30px;
-  --size-s-space: 8px;
-  --size-s-borderradius: 4px;
-
-  --size-m-font: var(--font-400-16);
-  --size-m-size: 40px;
-  --size-m-space: 16px;
-  --size-m-borderradius: 6px;
-
-  --size-l-font: var(--font-400-18);
-  --size-l-size: 48px;
-  --size-l-space: 20px;
-  --size-l-borderradius: 8px;
-
-  --navbar-overlay-z-index: 98;
-  --navbar-z-index: 99;
-  --modal-overlay-z-index: 100;
-  --modal-z-index: 101;
-  --popover-z-index: 102;
-  --context-menu-z-index: 103;
-  --select-z-index: 104;
-  --toast-z-index: 105;
-  --toastify-z-index: 105;
-  --tooltip-z-index: 106;
-}
 
 @mixin scroll {
   scrollbar-color: var(--grey-200-grad) transparent;
@@ -244,4 +130,66 @@ $gutter: 20px;
   gap: 20px;
   overflow-y: scroll;
   padding-right: 9px;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 90px;
+  min-height: calc(100vh - 550px);
+}
+
+.fluid-container {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  width: 1200px;
+  padding: 0px var(--size-l-space);
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-l-space);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.flex-row-spacing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.flexColumnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--grey-200);
+  border-radius: 10px;
+  padding: 20px;
 }

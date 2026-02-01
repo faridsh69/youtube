@@ -17,8 +17,6 @@ import { HeaderNavbar } from '@/ui/components/HeaderNavbar/HeaderNavbar'
 import { DEFAULT_META } from '@/utils/seo/seo.constants'
 import { ToastContainer } from 'react-toastify'
 
-import '@/theme/globals.scss'
-
 export const metadata = DEFAULT_META
 
 const RootLayout = (props: OnlyChildrenProps) => {

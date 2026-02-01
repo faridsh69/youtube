@@ -14,7 +14,7 @@ export const IconsStory = () => {
       <div className={styles.noWrapStory}>
         {Object.values(IconsEnum).map(icon => (
           <div key={icon} className={styles.iconsStory}>
-            <Icon icon={icon} color={ColorsEnum.Error} size={SizesEnum.M} />
+            <Icon icon={icon} color={ColorsEnum.PrimaryDark} size={SizesEnum.M} />
             <div>{icon}</div>
           </div>
         ))}
