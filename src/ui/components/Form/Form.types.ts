@@ -69,6 +69,7 @@ export type FormProps = {
   onChangeInput?: (formData: any, changedInput: any) => void
   schema?: FormSchemaType
   showValidationBar?: boolean
+  showErrorOnMount?: boolean
   setIsValid?: (isValid: boolean) => void
 }
 

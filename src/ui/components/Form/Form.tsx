@@ -17,17 +17,19 @@ export const Form = (props: FormProps) => {
     defaultValues,
     onChangeInput: propOnChangeInput,
     schema = undefined,
-    showValidationBar = false,
     setIsValid,
+    showValidationBar = false,
+    showErrorOnMount = false,
   } = props
 
   const {
     control,
     watch,
+    trigger,
     formState: { errors, isValid },
   } = useForm({
     resolver: schema ? yupResolver(schema) : undefined,
-    mode: 'onTouched',
+    mode: 'onChange',
     values,
     defaultValues,
   })
@@ -36,8 +38,11 @@ export const Form = (props: FormProps) => {
     setIsValid?.(isValid)
   }, [isValid])
 
+  useEffect(() => {
+    if (showErrorOnMount) trigger()
+  }, [])
+
   const onChangeInput = (inputObject: object) => {
-    console.log('@@@@@')
     propOnChangeInput?.(watch(), inputObject)
   }
 

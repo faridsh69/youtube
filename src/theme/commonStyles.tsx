@@ -2,7 +2,7 @@ import { clsx } from 'clsx'
 
 import styles from './theme.module.scss'
 
-const discourseLeftColumn = clsx(
+const carLeftColumn = clsx(
   styles['col-xl-2'],
   styles['col-lg-2'],
   styles['col-md-3'],
@@ -10,7 +10,7 @@ const discourseLeftColumn = clsx(
   styles['col-0'],
 )
 
-const discourseCenterColumn = clsx(
+const carCenterColumn = clsx(
   styles['col-xl-7'],
   styles['col-lg-7'],
   styles['col-md-9'],
@@ -18,7 +18,7 @@ const discourseCenterColumn = clsx(
   styles['col-12'],
 )
 
-const discourseRightColumn = clsx(
+const carRightColumn = clsx(
   styles['col-xl-3'],
   styles['col-lg-3'],
   styles['col-md-12'],
@@ -47,7 +47,7 @@ export const themeStyles = {
   col2: styles['col-2'],
   halfColumn,
   paginatedList: styles.paginatedList,
-  discourseLeftColumn,
-  discourseCenterColumn,
-  discourseRightColumn,
+  carLeftColumn,
+  carCenterColumn,
+  carRightColumn,
 }

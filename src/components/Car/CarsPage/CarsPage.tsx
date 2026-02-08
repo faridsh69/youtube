@@ -10,15 +10,15 @@ export const CarsPage = () => {
     <>
       <div className='container'>
         <div className={themeStyles.row}>
-          <div className={themeStyles.discourseLeftColumn}>
+          <div className={themeStyles.carLeftColumn}>
             <div className={styles.leftSidebar}></div>
           </div>
-          <div className={themeStyles.discourseCenterColumn}>
+          <div className={themeStyles.carCenterColumn}>
             <div className={styles.tabContent}>
               <CarsList />
             </div>
           </div>
-          <div className={themeStyles.discourseRightColumn}>
+          <div className={themeStyles.carRightColumn}>
             <div className={styles.rightSidebar}>Create car button</div>
           </div>
         </div>

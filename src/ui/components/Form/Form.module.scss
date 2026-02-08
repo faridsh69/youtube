@@ -1,4 +1,4 @@
-@use '../../../theme/theme.module.scss';
+@use '@/theme/theme.module.scss';
 
 .form {
   width: 100%;
@@ -44,7 +44,7 @@
     width: 134px;
     height: 14px;
     border-radius: 7px;
-    background-color: rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 0.1);
 
     .filledBar {
       height: 100%;
@@ -55,15 +55,13 @@
 }
 
 .validationSuccess {
-  color: var(--success-light);
-  border: 1px solid var(--success-dark);
-  background-color: var(--primary-light);
+  color: var(--success);
+  border: 1px solid var(--success);
 }
 
 .validationDanger {
-  color: var(--error-light);
-  border: 1px solid var(--error-dark);
-  background-color: var(--primary-light);
+  color: var(--error);
+  border: 1px solid var(--error);
 }
 
 .validationCollapseSuccess {

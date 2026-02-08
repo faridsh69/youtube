@@ -22,7 +22,7 @@ export const FileUploader = (props: FileUploaderProps) => {
     fileInputRef.current?.click()
   }
 
-  // const { createMutation: uploadImageMutation } = useCrudDiscourseRatingImages()
+  // const { createMutation: uploadImageMutation } = useCrudcarRatingImages()
 
   const handleSelectFile = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]

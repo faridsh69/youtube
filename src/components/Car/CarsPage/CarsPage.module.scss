@@ -1,4 +1,4 @@
-@use '@/theme/variables.scss';
+@use '@/theme/theme.module.scss';
 
 .leftSidebar {
   margin-top: 64px;
@@ -24,7 +24,7 @@
   left: 50px;
   right: 50px;
 
-  @include variables.respond-to(sm, min) {
+  @include theme.respond-to(sm, min) {
     display: none;
   }
 }

@@ -11,43 +11,49 @@ import {
 import styles from '../UiKit.module.scss'
 
 export const FormStory = () => {
-  const [formData, setFormData] = useState({
-    first_name: 'Jon',
-    last_name: 'Adel',
+  const [isValid, setIsValid] = useState(false)
+  const [formData] = useState({
+    first_name: 'Farid',
+    last_name: 'Shahidi',
+    bio: 'This is my own bio',
     gender: 'male',
     salary: 123000,
     job: 'IT',
-    role: 'Admin',
+    role: '',
     accept_term_and_conditions: ['accept'],
-    bio: 'This is my own bio',
   })
 
   const TEST_SCHEMA: FormSchemaType = SCHEMAS.wrapper({
-    first_name: SCHEMAS.requiredString.min(5),
-    last_name: SCHEMAS.requiredString.min(2),
-    gender: SCHEMAS.mixed(['male', 'female']),
+    first_name: SCHEMAS.requiredString.min(6),
+    last_name: SCHEMAS.requiredString.min(6),
     bio: SCHEMAS.requiredString,
-    role: SCHEMAS.mixed(['admin', 'guest']),
+    gender: SCHEMAS.mixed(['male']),
+    role: SCHEMAS.mixed(['admin']),
   })
 
   const onChangeInput = (formData: any) => {
-    setFormData(formData)
+    console.log(formData)
   }
 
   const inputs: FormInput[] = [
     {
       name: 'first_name',
       label: 'First name',
-      columns: 3,
+      columns: 6,
       component: InputComponentsEnum.Text,
     },
     {
       name: 'last_name',
       label: 'Last name',
-      columns: 3,
+      columns: 6,
       component: InputComponentsEnum.Text,
       placeholder: 'Last name (with placeholder, required, debounce time)',
       required: true,
+    },
+    {
+      name: 'bio',
+      columns: 12,
+      component: InputComponentsEnum.Textarea,
     },
     {
       name: 'salary',
@@ -84,7 +90,7 @@ export const FormStory = () => {
     },
     {
       name: 'gender',
-      columns: 3,
+      columns: 6,
       component: InputComponentsEnum.RadioList,
       options: [
         { value: 'male', label: 'Male' },
@@ -93,7 +99,7 @@ export const FormStory = () => {
     },
     {
       name: 'accept_term_and_conditions',
-      columns: 4,
+      columns: 6,
       component: InputComponentsEnum.Checklist,
       options: [
         {
@@ -107,8 +113,8 @@ export const FormStory = () => {
       ],
     },
     {
-      name: 'Switch',
-      columns: 2,
+      name: 'Are you happy?',
+      columns: 6,
       component: InputComponentsEnum.Toggle,
     },
     // {
@@ -116,11 +122,6 @@ export const FormStory = () => {
     //   columns: 3,
     //   component: InputComponentsEnum.Checkbox,
     // },
-    {
-      name: 'bio',
-      columns: 12,
-      component: InputComponentsEnum.Textarea,
-    },
   ]
 
   return (
@@ -142,12 +143,14 @@ export const FormStory = () => {
         <Form
           inputs={inputs}
           schema={TEST_SCHEMA}
-          values={formData}
+          defaultValues={formData}
           onChangeInput={onChangeInput}
-          showValidationBar
+          setIsValid={setIsValid}
+          showErrorOnMount={false}
+          showValidationBar={false}
         />
         <div style={{ float: 'right' }}>
-          <Button onClick={() => {}} label='Submit' />
+          <Button onClick={() => {}} label='Submit' disabled={!isValid} />
         </div>
       </div>
     </div>
